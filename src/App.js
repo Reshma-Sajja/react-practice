@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import { ProductCard } from './components/ProductCard';
+import { ProductList } from './components/ProductList';
 
+const product = {
+    imgSrc: "images/iphone.png",
+    title: "iPhone 15 pro",
+    specification: [
+        "A17 Pro chip with 6-core GPU",
+    "3x or 5x Telephoto Camera",
+    "Up to 29 hours video playback",
+    ],
+    price: 999,
+}
+
+/*component prop manipulation*/
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductList>
+        <ProductCard 
+         width="96px"
+         height = "96px"
+         background="darkolivegreen" 
+         product= {product}/> 
+        <ProductCard  
+         width="64px"
+         height = "64px" 
+         product= {product}/>
+        <ProductCard
+         width="128px"
+         height = "128px"  
+         background="peru" 
+         product= {product}/>
+      </ProductList>
     </div>
   );
 }
